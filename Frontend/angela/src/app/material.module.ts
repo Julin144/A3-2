@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from "@angular/material/button";
 import { MatInputModule } from '@angular/material/input';
-import { MatFormField } from '@angular/material/form-field';
-import { MatCard } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -11,8 +11,8 @@ import { MatCard } from '@angular/material/card';
         MatToolbarModule,
         MatButtonModule,
         MatInputModule,
-        // MatFormField,
-        // MatCard,
+        MatFormFieldModule,
+        MatCardModule,
 
     ]
 })
