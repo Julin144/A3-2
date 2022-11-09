@@ -2,45 +2,72 @@ const express = require('express');
 const app = express();
 const bodyParse = require('body-parser');
 const axios = require("axios");
+const mongoose = require("mongoose")
 
 const Credenciais = require('../Credenciais.js');
 
-const Paciente = {};
-let contador = 0;
-
 app.use(bodyParse.json());
 
-app.get('/paciente', (req, res) => {
-    res.send(Paciente)
-});
+//Model
+const Paciente = mongoose.model('Paciente', {
+    cpfPaciente: Number,
+    nomePaciente: String,
+    sobrenomePaciente: String,
+    numeroCarteirinha: Number,
+    senha: String,
+    tipo: String,
+})
 
-app.put('/paciente', async (req, res) => {
-    contador++;
-    const { nome, sobrenome, CPF, numeroCarteirinha, senha } = req.body;
-    Paciente[contador] = {
-        contador,
-        nome,
-        sobrenome,
-        CPF,
+app.post('/paciente', async (req, res) => {
+    const { cpfPaciente, nomePaciente, sobrenomePaciente, numeroCarteirinha, senha, tipo } = req.body
+
+    const paciente = {
+        cpfPaciente,
+        nomePaciente,
+        sobrenomePaciente,
         numeroCarteirinha,
         senha,
-        tipo
+        tipo,
     }
+    try {
+        await Paciente.create(paciente)
 
-    await axios.post("http://localhost:10000/eventos", {
-        tipo: "PacienteCriado",
-        dados: {
-            contador,
-            nome,
-            sobrenome,
-            CPF,
-            numeroCarteirinha,
-            senha,
-            tipo
-        }
-    });
+        await axios.post("http://localhost:10000/eventos", {
+            tipo: "PacienteCriado",
+            dados: {
+                cpfPaciente,
+                nomePaciente,
+                sobrenomePaciente,
+                numeroCarteirinha,
+                senha,
+                tipo,
+            },
+        });
 
-    res.status(201).send(Paciente[contador]);
+        res.status(201).json({ message: 'Paciente inserido no sistema com sucesso!' })
+    } catch (error) {
+
+        res.status(500).json({ erro: error })
+    }
+});
+
+app.get('/login', async (req, res) => {
+    const { cpfPaciente, senha } = req.body
+
+    try {
+        const loger = await Paciente.findOne({
+            cpfPaciente: cpfPaciente,
+            senha: senha
+        })
+
+        res.status(200).send({
+            tipo: loger.tipo,
+            cpfPaciente: loger.cpfPaciente
+        })
+
+    } catch (error) {
+        res.status(500).json({ massege: "Login ou senha incorretos" })
+    }
 });
 
 
@@ -51,6 +78,13 @@ app.post("/eventos", (req, res) => {
     res.status(200).send({ msg: "ok" });
 });
 
-app.listen(4000, () => {
-    console.log('Paciente. Porta 4000')
-});
+mongoose
+    .connect(
+        `mongodb+srv://${Credenciais.DBUser}:${Credenciais.DBPassword}@projetoangelaapi.rwhx6wh.mongodb.net/?retryWrites=true&w=majority`
+    )
+    .then(() => {
+        console.log('Conectou ao banco!')
+        console.log('Paciente. Porta 4000')
+        app.listen(4000)
+    })
+    .catch((err) => console.log(err))
