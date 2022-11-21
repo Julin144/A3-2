@@ -1,18 +1,39 @@
-  <mat-toolbar color="primary">
-    <img src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png" />
-    <!-- placeholder de imagem -->
-    <span class="spacer"></span>
-    <button mat-button class="botaobarra"> Visualizar receita </button>
-    <button mat-button class="botaobarra"> Agendar consulta </button>
-    <button mat-button class="botaobarra"> Visualizar consultas </button>
-    <button mat-button class="botaobarra"> Sair </button>
-  </mat-toolbar>
+<mat-toolbar color="primary">
+  <img src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png" />
+  <!-- placeholder de imagem -->
+  <span class="spacer"></span>
+  <button mat-button class="botaobarra" routerLink="/verreceita"> Visualizar receita </button>
+  <button mat-button class="botaobarra" routerLink="/agendamento"> Agendar consulta </button>
+  <button mat-button class="botaobarra" routerLink="/verconsulta"> Visualizar consultas </button>
+  <button mat-button class="botaobarra" routerLink="/"> Sair </button>
+</mat-toolbar>
 
-  <div>
+<mat-grid-list cols="3">
+  <mat-grid-tile></mat-grid-tile>
+  <mat-grid-tile>
     <div>
-      <div class="texto">Agendar consulta:</div>
-      <div class="texto"> CPF: </div>
-      <div class="texto"> Data do agendamento: </div>
-      <button mat-flat-button class="botao" color="primary"> Agendar </button>
+      <div>
+        <div class="texto">Agendar consulta:</div>
+        <br />
+        <div class="texto"> CPF: </div>
+        <form>
+          <mat-form-field appearance="outline">
+            <mat-label class="texto">CPF</mat-label>
+            <mat-select name="CPF">
+            </mat-select>
+          </mat-form-field>
+        </form>
+        <div class="texto"> Data do agendamento: </div>
+        <mat-form-field appearance="outline">
+          <mat-label class="texto">Data</mat-label>
+          <input matInput [matDatepicker]="picker">
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <br />
+        <button mat-flat-button class="botao" color="primary"> Agendar </button>
+      </div>
     </div>
-  </div>
+  </mat-grid-tile>
+  <mat-grid-tile></mat-grid-tile>
+</mat-grid-list>

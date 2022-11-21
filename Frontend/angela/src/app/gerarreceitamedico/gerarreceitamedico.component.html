@@ -2,24 +2,73 @@
   <img src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png" />
   <!-- placeholder de imagem -->
   <span class="spacer"></span>
-  <button mat-button class="botaobarra"> Criar prontuário </button>
-  <button mat-button class="botaobarra"> Visualizar prontuário </button>
-  <button mat-button class="botaobarra"> Gerar receita </button>
-  <button mat-button class="botaobarra"> Sair </button>
+  <button mat-button class="botaobarra" routerLink="/criarprontuario"> Criar prontuário </button>
+  <button mat-button class="botaobarra" routerLink="/verprontuario"> Visualizar prontuário </button>
+  <button mat-button class="botaobarra" routerLink="/gerarreceita"> Gerar receita </button>
+  <button mat-button class="botaobarra" routerLink="/"> Sair </button>
 </mat-toolbar>
 
-<div>
-  <div>
-    <div class="texto"> Gerar receita </div>
-    <div class="texto"> Selecione o paciente: </div>
-    <div class="texto"> Data: </div>
-    <div class="texto"> Válido até: </div>
-    <div class="texto"> Remédio: </div>
-    <div class="texto"> Tipo de uso: </div>
-    <div class="texto"> Quantidade:</div>
-    <div class="texto"> Intervalo de uso: </div>
-    <div class="texto"> Durante: </div>
-    <button mat-flat-button class="botao" color="primary">Adicionar remédio</button>
+
+<mat-grid-list cols="2" rowHeight="160vh">
+  <mat-grid-tile class="texto" colspan="2" rowHeight="10px">Gerar receita</mat-grid-tile>
+  <mat-grid-tile>
+    <div>
+      <br />
+      <form>
+        <div class="texto"> Selecione o paciente: </div>
+        <mat-form-field appearance="outline">
+          <mat-label class="texto">Paciente</mat-label>
+          <mat-select class="texto" name="Paciente">
+          </mat-select>
+          </mat-form-field>
+          <br />
+          <div class="texto"> Data: </div>
+          <mat-form-field appearance="outline">
+            <mat-label class="texto">Data</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <br />
+          <div class="texto"> Válido até: </div>
+          <br />
+          <div class="texto"> Remédio: </div>
+          <mat-form-field appearance="outline">
+            <mat-label class="texto">Remédio</mat-label>
+            <input class="texto" matInput placeholder="Remédio">
+          </mat-form-field>
+          <br />
+          <div class="texto"> Tipo de uso: </div>
+          <mat-form-field appearance="outline">
+            <mat-label class="texto">Tipo de uso</mat-label>
+            <input class="texto" matInput placeholder="Oral, intravenoso">
+          </mat-form-field>
+          <br />
+          <div class="texto"> Quantidade: </div>
+          <mat-form-field appearance="outline">
+            <mat-label class="texto">Quantidade</mat-label>
+            <input class="texto" matInput placeholder="1 comprimido">
+          </mat-form-field>
+          <br />
+          <div class="texto"> Intervalo de uso: </div>
+          <mat-form-field appearance="outline">
+            <mat-label class="texto">Intervalo de uso</mat-label>
+            <input class="texto" matInput placeholder="De 8 em 8 horas">
+          </mat-form-field>
+          <br />
+          <div class="texto"> Durante: </div>
+          <mat-form-field appearance="outline">
+            <mat-label class="texto">Durante</mat-label>
+            <input class="texto" matInput placeholder="5 dias">
+          </mat-form-field>
+          <br />
+      </form>
+      <br />
+      <button mat-flat-button class="botao" color="primary">Adicionar remédio</button>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile>y</mat-grid-tile>
+  <mat-grid-tile colspan="2">
     <button mat-flat-button class="botao" color="primary">Gerar receita</button>
-  </div>
-</div>
+  </mat-grid-tile>
+</mat-grid-list>

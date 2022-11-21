@@ -2,19 +2,41 @@
   <img src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png" />
   <!-- placeholder de imagem -->
   <span class="spacer"></span>
-  <button mat-button class="botaobarra"> Visualizar receita </button>
-  <button mat-button class="botaobarra"> Agendar consulta </button>
-  <button mat-button class="botaobarra"> Visualizar consultas </button>
-  <button mat-button class="botaobarra"> Sair </button>
+  <button mat-button class="botaobarra" routerLink="/verreceita"> Visualizar receita </button>
+  <button mat-button class="botaobarra" routerLink="/agendamento"> Agendar consulta </button>
+  <button mat-button class="botaobarra" routerLink="/verconsulta"> Visualizar consultas </button>
+  <button mat-button class="botaobarra" routerLink="/"> Sair </button>
 </mat-toolbar>
 
-<div>
-  <div>
+<mat-grid-list cols="3">
+  <mat-grid-tile></mat-grid-tile>
+  <mat-grid-tile>
+    <div>
     <div class="texto"> Visualizar consultas </div>
-    <div class="texto">Nome do paciente:</div>
-    <div class="texto">Data e hora:</div>
-    <div class="texto"> CPF: </div>
-    <div class="texto"> Tipo de paciente: </div>
-    <div class="texto"> Número do plano de saúde:</div>
+    <br/>
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Consulta Paciente 1
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Nome completo do paciente:
+          Data e horário:
+          CPF:
+          Número do plano de saúde:
+        </p>
+      </mat-expansion-panel>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Consulta Paciente 2
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>informações</p>
+      </mat-expansion-panel>
+    </mat-accordion>
   </div>
-</div>
+  </mat-grid-tile>
+  <mat-grid-tile></mat-grid-tile>
+</mat-grid-list>

@@ -1,20 +1,86 @@
-  <mat-toolbar color="primary">
-    <img src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png" />
-    <!-- placeholder de imagem -->
-    <span class="spacer"></span>
-    <button mat-button class="botaobarra">Cadastro</button>
-    <button mat-button class="botaobarra">Login</button>
-  </mat-toolbar>
+<mat-toolbar color="primary">
+  <img src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png" />
+  <!-- placeholder de imagem -->
+  <span class="spacer"></span>
+  <button mat-button class="botaobarra" routerLink="/cadastro">Cadastro</button>
+  <button mat-button class="botaobarra" routerLink="/login">Login</button>
+</mat-toolbar>
 
-<div>
-  <div>
-    <div class="texto">Para continuar, faça seu cadastro: </div>
-    <div class="texto"> Nome: </div>
-    <div class="texto"> Sobrenome: </div>
-    <div class="texto"> CPF: </div>
-    <div class="texto"> Número do plano de saúde:</div>
-    <div class="texto"> Senha: </div>
-    <div class="texto"> Confirme a senha: </div>
-    <button mat-flat-button class="botao" color="primary"> Cadastro </button>
-  </div>
-</div>
+<mat-grid-list cols="3" rowHeight="24vh">
+  <mat-grid-tile></mat-grid-tile>
+  <mat-grid-tile rowspan="10">
+    <div>
+      <div class="texto">Para continuar, faça seu cadastro: </div>
+      <br/>
+      <form>
+        <div class="texto"> Nome: </div>
+        <mat-form-field appearance="outline">
+          <mat-label class="texto">Nome</mat-label>
+          <input class="texto" matInput placeholder="José, Maria">
+        </mat-form-field>
+        <div class="texto"> Sobrenome: </div>
+        <mat-form-field appearance="outline">
+          <mat-label class="texto">Sobrenome</mat-label>
+          <input class="texto" matInput placeholder="Silva Sauro">
+        </mat-form-field>
+        <div class="texto"> CPF: </div>
+        <mat-form-field appearance="outline">
+          <mat-label class="texto">CPF</mat-label>
+          <input class="texto" matInput placeholder="123.456.789-10">
+        </mat-form-field>
+        <div class="texto"> Número do plano de saúde:</div>
+        <mat-form-field appearance="outline">
+          <mat-label class="texto">Carteira de saúde</mat-label>
+          <input class="texto" matInput placeholder="88888 8000 789 10">
+        </mat-form-field>
+        <div class="texto"> Senha: </div>
+        <mat-form-field appearance="outline">
+          <mat-label class="texto">Senha</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+        <div class="texto"> Confirme a sua senha: </div>
+        <mat-form-field appearance="outline">
+          <mat-label class="texto">Senha</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+        <div class="texto"> Adicionar dependentes: </div>
+        <br/>
+        <div class="texto"> Nome: </div>
+        <mat-form-field appearance="outline">
+          <mat-label class="texto">Nome</mat-label>
+          <input matInput placeholder="Maria, José">
+        </mat-form-field>
+        <div class="texto"> Sobrenome: </div>
+        <mat-form-field appearance="outline">
+          <mat-label class="texto">Sobrenome</mat-label>
+          <input class="texto" matInput placeholder="Silva Sauro">
+        </mat-form-field>
+        <div class="texto"> CPF: </div>
+        <mat-form-field appearance="outline">
+          <mat-label class="texto">CPF</mat-label>
+          <input class="texto" matInput placeholder="123.456.789-10">
+        </mat-form-field>
+        <div class="texto"> Número do plano de saúde:</div>
+        <mat-form-field appearance="outline">
+          <mat-label class="texto">Carteira de saúde</mat-label>
+          <input class="texto" matInput placeholder="88888 8000 789 10">
+        </mat-form-field>
+        <br />
+        <button mat-flat-button class="botao" color="primary"> Cadastrar Dependentes </button>
+      </form>
+      <br/>
+      <div class="texto"> Colocar alguma maneira de visualizar os dependentes que foram cadastrados</div>
+      <br />
+      <button mat-flat-button class="botao" color="primary"> Concluir cadastro </button>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile></mat-grid-tile>
+</mat-grid-list>

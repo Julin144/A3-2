@@ -10,9 +10,9 @@
 .texto {
   font-family:Poppins;
   font-size: large;
+  text-align: center;
 }
 
 .botao {
   font-family:Poppins;
-  /* color: #00AFB9; */
 }

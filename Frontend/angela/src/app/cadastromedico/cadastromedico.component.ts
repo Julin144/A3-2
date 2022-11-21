@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cadastromedico.component.css']
 })
 export class CadastromedicoComponent implements OnInit {
+hide:any;
 
   constructor() { }
 

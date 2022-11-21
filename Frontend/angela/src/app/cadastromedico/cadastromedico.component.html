@@ -2,23 +2,62 @@
   <img src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png" />
   <!-- placeholder de imagem -->
   <span class="spacer"></span>
-  <button mat-button class="botaobarra"> Criar prontuário </button>
-  <button mat-button class="botaobarra"> Visualizar prontuário </button>
-  <button mat-button class="botaobarra"> Gerar receita </button>
-  <button mat-button class="botaobarra"> Cadastrar médico </button>
-  <button mat-button class="botaobarra"> Sair </button>
+  <button mat-button class="botaobarra" routerLink="/criarprontuario"> Criar prontuário </button>
+  <button mat-button class="botaobarra" routerLink="/verprontuario"> Visualizar prontuário </button>
+  <button mat-button class="botaobarra" routerLink="/gerarreceita"> Gerar receita </button>
+  <button mat-button class="botaobarra" routerLink="/cadastromedico"> Cadastrar médico </button>
+  <button mat-button class="botaobarra" routerLink="/"> Sair </button>
 </mat-toolbar>
 
-<div>
-  <div>
-    <div class="texto">Faça o cadastro: </div>
-    <div class="texto"> Nome: </div>
-    <div class="texto"> Sobrenome: </div>
-    <div class="texto"> CPF: </div>
-    <div class="texto"> CRM:</div>
-    <div class="texto"> Senha: </div>
-    <div class="texto"> Confirme a senha: </div>
-    <button mat-flat-button class="botao" color="primary"> Cadastro </button>
-  </div>
-</div>
+<mat-grid-list cols="3" rowHeight="150vh">
+  <mat-grid-tile></mat-grid-tile>
+  <mat-grid-tile>
+    <div>
+      <div>
+        <div class="texto">Faça o cadastro: </div>
+        <br/>
+        <div class="texto"> Nome: </div>
+        <mat-form-field appearance="outline">
+          <mat-label class="texto">Nome</mat-label>
+          <input class="texto" matInput placeholder="Julio">
+        </mat-form-field>
+        <div class="texto"> Sobrenome: </div>
+        <mat-form-field appearance="outline">
+          <mat-label class="texto">Sobrenome</mat-label>
+          <input class="texto" matInput placeholder="Assunção">
+        </mat-form-field>
+        <div class="texto"> CPF: </div>
+          <mat-form-field appearance="outline">
+            <mat-label class="texto">CPF</mat-label>
+            <input class="texto" matInput placeholder="123.456.789-10">
+          </mat-form-field>
+        <div class="texto"> Conselho Regional de Medicina:</div>
+        <mat-form-field appearance="outline">
+          <mat-label class="texto">CRM</mat-label>
+          <input class="texto" matInput placeholder="88888">
+        </mat-form-field>
+        <div class="texto"> Senha: </div>
+        <mat-form-field appearance="outline">
+          <mat-label class="texto">Senha</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+        <div class="texto"> Confirme a sua senha: </div>
+        <mat-form-field appearance="outline">
+          <mat-label class="texto">Senha</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+        <br/>
+        <button mat-flat-button class="botao" color="primary"> Cadastro </button>
+      </div>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile></mat-grid-tile>
+</mat-grid-list>
+
 

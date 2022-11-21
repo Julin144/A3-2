@@ -1,17 +1,36 @@
-  <mat-toolbar color="primary">
-    <img src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png" />
-    <!-- placeholder de imagem -->
-    <span class="spacer"></span>
-    <button mat-button class="botaobarra"> Visualizar receita </button>
-    <button mat-button class="botaobarra"> Agendar consulta </button>
-    <button mat-button class="botaobarra"> Visualizar consultas </button>
-    <button mat-button class="botaobarra"> Sair </button>
-  </mat-toolbar>
+<mat-toolbar color="primary">
+  <img src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png" />
+  <!-- placeholder de imagem -->
+  <span class="spacer"></span>
+  <button mat-button class="botaobarra" routerLink="/verreceita"> Visualizar receita </button>
+  <button mat-button class="botaobarra" routerLink="/agendamento"> Agendar consulta </button>
+  <button mat-button class="botaobarra" routerLink="/verconsulta"> Visualizar consultas </button>
+  <button mat-button class="botaobarra" routerLink=""> Sair </button>
+</mat-toolbar>
 
-<div>
-  <div>
-    <div class="texto">Visualizar receita</div>
-    <div class="texto"> Agendar consulta </div>
-    <div class="texto"> Visualizar consultas </div>
-  </div>
-</div>
+<mat-grid-list cols="3">
+  <mat-grid-tile>
+    <mat-card>
+      <img mat-card-image src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png">
+      <mat-card-actions>
+        <button mat-button routerLink="/agendamento" class="texto">Agendar Consulta</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card>
+      <img mat-card-image src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png">
+      <mat-card-actions>
+        <button mat-button routerLink="/verconsulta" class="texto">Visualizar Consulta</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card>
+      <img mat-card-image src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png">
+      <mat-card-actions>
+        <button mat-button routerLink="/verreceita" class="texto">Visualizar Receita</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

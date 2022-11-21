@@ -4,6 +4,14 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTreeModule } from '@angular/material/tree';
 
 
 @NgModule({
@@ -13,6 +21,14 @@ import { MatCardModule } from '@angular/material/card';
         MatInputModule,
         MatFormFieldModule,
         MatCardModule,
+        MatIconModule,
+        MatTableModule,
+        MatSelectModule,
+        MatDatepickerModule,
+        MatGridListModule,
+        MatNativeDateModule,
+        MatExpansionModule,
+        MatTreeModule,
 
     ]
 })

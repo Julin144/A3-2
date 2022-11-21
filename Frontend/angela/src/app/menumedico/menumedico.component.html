@@ -2,17 +2,34 @@
   <img src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png" />
   <!-- placeholder de imagem -->
   <span class="spacer"></span>
-  <button mat-button class="botaobarra"> Criar prontuário </button>
-  <button mat-button class="botaobarra"> Visualizar prontuário </button>
-  <button mat-button class="botaobarra"> Gerar receita </button>
-  <button mat-button class="botaobarra"> Sair </button>
+  <button mat-button class="botaobarra" routerLink="/criarprontuario"> Criar prontuário </button>
+  <button mat-button class="botaobarra" routerLink="/verprontuario"> Visualizar prontuário </button>
+  <button mat-button class="botaobarra" routerLink="/gerarreceita"> Gerar receita </button>
+  <button mat-button class="botaobarra" routerLink="/"> Sair </button>
 </mat-toolbar>
 
-<div>
-<div>
-  <div class="texto"> Criar prontuário  </div>
-  <div class="texto"> Visualizar prontuário </div>
-  <div class="texto"> Gerar receita </div>
-</div>
-</div>
-
+<mat-grid-list cols="3">
+  <mat-grid-tile>
+    <mat-card>
+      <img mat-card-image src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png">
+      <mat-card-actions>
+        <button mat-button class="texto" routerLink="/criarprontuario">Criar prontuário</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card>
+      <img mat-card-image src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png">
+      <mat-card-actions>
+        <button mat-button class="texto" routerLink="/verprontuario">Visualizar prontuário</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card>
+      <img mat-card-image src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png">
+      <mat-card-actions>
+        <button mat-button class="texto" routerLink="/gerarreceita">Gerar receita</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
