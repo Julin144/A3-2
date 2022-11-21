@@ -18,7 +18,7 @@ const Remedio = mongoose.model('Remedio', {
     duracao: String,
 })
 app.post('/receita/:id/remedio', async (req, res) => {
-    const { idReceita, nome, tipoUso, dosagem, intervaloUso, duracao } = req.body
+    const { nome, tipoUso, dosagem, intervaloUso, duracao } = req.body
     
     const remedio = {
         idReceita: req.params.id ,
