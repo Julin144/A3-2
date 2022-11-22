@@ -8,18 +8,23 @@
   <button mat-button class="botaobarra" routerLink="/"> Sair </button>
 </mat-toolbar>
 
+<mat-grid-list cols="2" rowHeight="19px">
 
-<mat-grid-list cols="2" rowHeight="160vh">
-  <mat-grid-tile class="texto" colspan="2" rowHeight="10px">Gerar receita</mat-grid-tile>
-  <mat-grid-tile>
+  <mat-grid-tile class="texto" colspan="2" rowHeight="20px">
     <div>
-      <br />
-      <form>
-        <div class="texto"> Selecione o paciente: </div>
-        <mat-form-field appearance="outline">
-          <mat-label class="texto">Paciente</mat-label>
-          <mat-select class="texto" name="Paciente">
-          </mat-select>
+      Gerar receita
+    </div>
+  </mat-grid-tile>
+
+  <mat-grid-tile colspan="2" rowspan="48">
+    <div style="width:80%;background-color:white;display: flex;">
+      <div style="width:60%">
+        <form>
+          <div class="texto"> Selecione o paciente: </div>
+          <mat-form-field appearance="outline">
+            <mat-label class="texto">Paciente</mat-label>
+            <mat-select class="texto" name="Paciente">
+            </mat-select>
           </mat-form-field>
           <br />
           <div class="texto"> Data: </div>
@@ -62,13 +67,16 @@
             <input class="texto" matInput placeholder="5 dias">
           </mat-form-field>
           <br />
-      </form>
-      <br />
-      <button mat-flat-button class="botao" color="primary">Adicionar remédio</button>
+        </form>
+      </div>
+      <div style="width:40%;background-color:#dde4e3">
+        dajdkj kjsjksjkj
+      </div>
     </div>
   </mat-grid-tile>
-  <mat-grid-tile>y</mat-grid-tile>
+
   <mat-grid-tile colspan="2">
-    <button mat-flat-button class="botao" color="primary">Gerar receita</button>
+    <button mat-flat-button class="botao" color="primary" >Gerar receita</button>
   </mat-grid-tile>
+  <mat-grid-tile></mat-grid-tile>
 </mat-grid-list>
