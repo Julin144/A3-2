@@ -1,5 +1,6 @@
+import { NgForm } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Route } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,6 +9,12 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   hide: any;
+
+  onLogar(form: NgForm){
+    if (form.invalid) {
+      return;
+    }
+  }
 
   ngOnInit(): void {}
 

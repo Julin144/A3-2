@@ -12,11 +12,11 @@
     <div>
       <div class="texto">Por favor, faça seu login:</div>
       <br />
-      <form >
+      <form (submit)="onLogar(loginForm)"#loginForm = "ngForm" >
         <div class="texto"> CPF: </div>
         <mat-form-field appearance="outline">
           <mat-label class="texto">CPF</mat-label>
-          <input matInput placeholder="123.456.789-10">
+          <input type="text" required matInput placeholder="123.456.789-10" name="cpfPaciente" ngModel #cpfPaciente="ngModel">
         </mat-form-field>
         <div class="texto"> Senha: </div>
         <mat-form-field appearance="outline">
