@@ -1,4 +1,8 @@
+import { NgForm } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { Route } from '@angular/router';
+import { AgendarpacienteService } from './agendarpaciente.service';
+
 
 @Component({
   selector: 'app-agendarpaciente',
@@ -7,7 +11,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgendarpacienteComponent implements OnInit {
 
-  constructor() { }
+  constructor(public AgendarpacienteService: AgendarpacienteService) { }
+  onAgenda(form: NgForm){
+    if (form.invalid) {
+      return;
+    }
+    this.AgendarpacienteService.getagenda(form.value.cpfPaciente, form.value.data)
+  }
+
 
   ngOnInit(): void {
   }

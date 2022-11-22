@@ -15,13 +15,11 @@
         <div class="texto">Agendar consulta:</div>
         <br />
         <div class="texto"> CPF: </div>
-        <form>
+        <form (submit)="onAgenda(agendaForm)"#agendaForm = "ngForm">
           <mat-form-field appearance="outline">
             <mat-label class="texto">CPF</mat-label>
-            <mat-select name="CPF">
-            </mat-select>
+            <input type="text" required matInput name="CPF" placeholder="12345678910" ngModel #agenda="ngModel">
           </mat-form-field>
-        </form>
         <div class="texto"> Data do agendamento: </div>
         <mat-form-field appearance="outline">
           <mat-label class="texto">Data</mat-label>
@@ -31,6 +29,7 @@
         </mat-form-field>
         <br />
         <button mat-flat-button class="botao" color="primary"> Agendar </button>
+      </form>
       </div>
     </div>
   </mat-grid-tile>

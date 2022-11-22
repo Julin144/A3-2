@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginService } from './login/login.service';
+import { AgendarpacienteService } from './agendarpaciente/agendarpaciente.service';
 
 import { RotasModule } from './rotas.module';
 
@@ -47,7 +49,10 @@ import { CadastromedicoComponent } from './cadastromedico/cadastromedico.compone
     RotasModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    LoginService,
+    AgendarpacienteService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
