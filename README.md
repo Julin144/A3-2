@@ -8,8 +8,6 @@ Julio Assunção, RA: 822158274
 
 Ingrid Torres, RA: 822135330
 
-Wendel Silva Davi, RA: 82120424
-
 Thiago Maia Marques, RA:821236915 
 
 ## Modelagem do Sistema
