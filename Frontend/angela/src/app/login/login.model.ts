@@ -1,4 +1,4 @@
 export interface Login{
-  tipo: string,
+  senha: string,
   cpfPaciente: number,
 }

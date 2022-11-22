@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Login } from './login.model';
 import { HttpClient } from '@angular/common/http';
-import { Subject } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
-export class ClienteService {
+export class LoginService {
   constructor(private httpClient: HttpClient) {}
+  getlogin(cpfPaciente: number, senha: string){const login: Login = { senha: senha, cpfPaciente: cpfPaciente, }
+  this.httpClient.get<{
+    senha: string,
+    cpfPaciente: number
+  }>('http://localhost:4000/login').subscribe(resultado => console.log(resultado))
+}
 }

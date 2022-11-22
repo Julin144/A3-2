@@ -21,14 +21,14 @@
         <div class="texto"> Senha: </div>
         <mat-form-field appearance="outline">
           <mat-label class="texto">Senha</mat-label>
-          <input matInput [type]="hide ? 'password' : 'text'">
+          <input matInput [type]="hide ? 'password' : 'text'" name="senha" ngModel #senha="ngModel">
           <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
             [attr.aria-pressed]="hide">
             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
           </button>
         </mat-form-field>
         <br />
-        <button mat-flat-button class="botao" color="primary" (click)="logar()"> Login </button>
+        <button mat-flat-button class="botao" color="primary"> Login </button>
       </form>
     </div>
 

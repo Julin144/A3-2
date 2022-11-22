@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { RotasModule } from './rotas.module';
 
@@ -41,10 +42,10 @@ import { CadastromedicoComponent } from './cadastromedico/cadastromedico.compone
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialModule,
     RotasModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
