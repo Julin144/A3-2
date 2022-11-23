@@ -19,3 +19,7 @@ Protótipo: https://www.figma.com/community/file/1164708269725233498
 ## Vídeo de demonstração
 
 https://www.youtube.com/watch?v=WOoNunnfAVU
+
+## Apresentação em slides
+
+https://docs.google.com/presentation/d/1j5g_hUFIpCdB6mXWh9LDm1ON30oDJ8XTUhC4Kmk79J0/edit?usp=sharing
