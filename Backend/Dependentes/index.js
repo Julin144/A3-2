@@ -11,11 +11,11 @@ app.use(bodyParse.json());
 
 //model
 const Dependente = mongoose.model('Dependente', {
-    cpfPaciente: Number,
-    cpfDependente: Number,
+    cpfPaciente: String,
+    cpfDependente: String,
     nomeDependente: String,
     sobrenomeDependente: String,
-    numeroCarteirinha: Number,
+    numeroCarteirinha: String,
 })
 
 app.post('/paciente/:id/dependente', async (req, res) => {
